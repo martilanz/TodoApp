@@ -14,7 +14,7 @@
 {/* <Card>
   <h2>Titolo</h2>
   <p>Questo è il contenuto della card.</p>
-</Card> */}
+</Card> */} 
 
 //Dentro la Card children conterrà:
 // [
