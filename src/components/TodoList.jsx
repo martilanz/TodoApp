@@ -2,15 +2,27 @@ import TodoItem from "./TodoItem";
 
 const itemClasses = "list-group-item border rounded-1 my-1";
 
-// <li className={itemClasses}>Prima attività</li>
-// <li className={itemClasses}>Seconda attività</li>
-// <li className={itemClasses}>Terza attività</li>
+const todos = [
+    { id: 1, done: false, text: "Prima attività" },
+    { id: 2, done: true, text: "Seconda attività" },
+    { id: 3, done: false, text: "Terza attività" },
+];
+
+
+// function getTodoItems(tList) {
+
+//     return tList.map(t => (
+//     <TodoItem key={t.id} done={t.done} text={t.text} />
+//   ));
+// }
+
 export default function TodoList() {
+    const todoItems = todos.map(t => (
+        <TodoItem key={t.id} done={t.done} text={t.text} />
+    ));
     return (
         <ul className="list-group pb-3">
-            <TodoItem done={false} text="Prima attività"/>
-            <TodoItem done={true} text="Prima attività" />
-            <TodoItem done={false} text="Terza attività"/>
+            {todoItems}
         </ul>
     );
 }

@@ -39,24 +39,31 @@
 
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
-
+import Layout from "./components/Layout";
+import { LeftCol } from "./components/Layout";
+import { RightCol } from "./components/Layout";
+import User from "./components/User";
+import TodoList from "./components/TodoList";
 import "./style.css";
+import ListNames from "./components/ListNames";
+
 const user = {
   id: 1,
   name: "Martina",
   image: "https://github.com/lifeisfoo.png",
 };
 
-//Importiamo i due nuovi componenti
 export default function App() {
   return (
-    //container-fluid: usare il contenitore a tutto schermo 
-    //row: usare la griglia a 12 colonne
-    <div className="container-fluid"> 
-      <div className="row">
-        <Sidebar user={user} />
-        <Main />
-      </div>
-    </div>
+    <Layout>
+      <LeftCol>
+        <User name={user.name} image={user.image} />
+        <hr />
+        <ListNames />
+      </LeftCol>
+      <RightCol>
+        <TodoList />
+      </RightCol>
+    </Layout>
   );
 }
